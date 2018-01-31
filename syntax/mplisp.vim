@@ -7,12 +7,29 @@ if exists("b:current_syntax")
   finish
 endif
 
-syn keyword basicLanguageKeywords def lambda
+syn keyword builtin def
+syn keyword builtin lambda
 
-syn region lispList start="(" end=")" fold transparent
+syn match basicOps '\(+\|==\|-\|*\|/\|or?\|and?\) ' 
 
-hi def link lispString      Constant
-hi def link lispNumber      Constant
+syn match function '(def [[:alnum:]]+ '
 
+syn match numberValue '\d\+'
+syn match numberValue '[-+]\d\+'
+syn match numberValue '[-+]\d\+\.\d*'
+syn match numberValue '[-+]\=\d[[:digit:]]*[eE][\-+]\=\d\+'
+syn match numberValue '\d[[:digit:]]*[eE][\-+]\=\d\+'
+syn match numberValue '[-+]\=\d[[:digit:]]*\.\d*[eE][\-+]\=\d\+'
+syn match numberValue '\d[[:digit:]]*\.\d*[eE][\-+]\=\d\+'
+
+syn region listBlock start="(" end=")" fold transparent
+syn region stringBlock start="\"" end="\""
 
 let b:current_syntax = "mplisp"
+
+hi def link builtin Identifier
+hi def link basicOps Special
+hi def link numberValue Constant
+hi def link listBlock Statement
+hi def link function Identifier
+hi def link stringBlock String
