@@ -20,10 +20,11 @@ syn match builtin '\(list-ref\|list\|apply\|length\|enumerate\|import\) '
 
 syn match basicOps '\(+\|%\|!=\|==\|-\|*\|/\) '
 syn match basicOps '\(or?\|and?\|bool?\|null?\|list?\|>\|<\) '
+syn match basicOps '\(assert!\|assert-equal!\) '
 
 " syn match function ' adder '
 
-syn match shebang '^#!\(.*\)$'
+syn match shebang '^#\(.*\)$'
 
 syn region listBlock start="(" end=")" fold transparent
 syn region stringBlock start="\"" end="\""
