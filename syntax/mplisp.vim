@@ -7,14 +7,6 @@ if exists("b:current_syntax")
   finish
 endif
 
-syn match builtin '\(def\|lambda\|let\|let*\|map\|filter\|range\|list-ref\|list\|apply\|length\|enumerate\|import\)'
-
-syn match basicOps '\(+\|%\|!=\|==\|-\|*\|/\|or?\|and?\|bool?\|null?\|list?\|>\|<\)'
-
-" syn match function ' adder '
-
-syn match shebang '^#!\(.*\)$'
-
 syn match numberValue '\(#t\|#f) '
 syn match numberValue '\d\+'
 syn match numberValue '[-+]\d\+'
@@ -23,6 +15,15 @@ syn match numberValue '[-+]\=\d[[:digit:]]*[eE][\-+]\=\d\+'
 syn match numberValue '\d[[:digit:]]*[eE][\-+]\=\d\+'
 syn match numberValue '[-+]\=\d[[:digit:]]*\.\d*[eE][\-+]\=\d\+'
 syn match numberValue '\d[[:digit:]]*\.\d*[eE][\-+]\=\d\+'
+syn match builtin '\(def\|lambda\|let\|let*\|map\|filter\|range\) '
+syn match builtin '\(list-ref\|list\|apply\|length\|enumerate\|import\) '
+
+syn match basicOps '\(+\|%\|!=\|==\|-\|*\|/\) '
+syn match basicOps '\(or?\|and?\|bool?\|null?\|list?\|>\|<\) '
+
+" syn match function ' adder '
+
+syn match shebang '^#!\(.*\)$'
 
 syn region listBlock start="(" end=")" fold transparent
 syn region stringBlock start="\"" end="\""
