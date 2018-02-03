@@ -15,7 +15,7 @@ syn match basicOps '\(+\|%\|!=\|==\|-\|*\|/\|or?\|and?\|bool?\|null?\|list?\|>\|
 
 syn match shebang '^#!\(.*\)$'
 
-syn match numberValue '\(#t\|#f) '
+syn match numberValue '\(#t\|#f\)'
 syn match numberValue '\d\+'
 syn match numberValue '[-+]\d\+'
 syn match numberValue '[-+]\d\+\.\d*'
