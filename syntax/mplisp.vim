@@ -23,6 +23,8 @@ syn match basicOps '\(assert!\|assert-equal!\) '
 syn match builtin '\(def\|lambda\|let\|let\*\|map\|filter\|range\)[\r\t\n ]'
 syn match builtin '\(list-ref\|list\|apply\|length\|enumerate\|import\)[\r\t\n ]'
 
+syn match comment ';.*$'
+
 syn region listBlock start="(" end=")" fold transparent
 syn region stringBlock start="\"" end="\""
 syn region stringBlock start="\'" end="\'"
@@ -36,3 +38,4 @@ hi def link listBlock Statement
 hi def link function Identifier
 hi def link stringBlock String
 hi def link shebang Comment
+hi def link comment Comment
